@@ -39,7 +39,7 @@ const server = http.createServer((req, res) => {
 
     // Parsing the substrings
     const urlSubStr = req.url.split('/'); // Splits url into Substrings
-    let requestedDogId = parseint(req.url.split('/')[2] ? req.url.split('/')[2] : undefined)
+    let requestedDogId = parseInt(req.url.split('/')[2] ? req.url.split('/')[2] : undefined)
 
     if (req.method === 'GET') {
 
@@ -62,7 +62,7 @@ const server = http.createServer((req, res) => {
       }
 
       // Route Handler for Dog Creation  Page
-      if (url.urlSubStr[2] === 'new') {
+      if (url.urlSubStr === 'new') {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         return res.end('Dog create form page')
